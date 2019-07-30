@@ -5,9 +5,22 @@ html = urlopen('https://treehouse-projects.github.io/horse-land/index.html')
 soup = BeautifulSoup(html.read(), 'html.parser')
 
 # print(soup.prettify())
-print(soup.title)
+# print(soup.title)
 
-divs = soup.find_all('div', {'class': 'featured'})
+# div = soup.find('div', {'class': 'featured'})
 
-for div in divs:
-    print(div)
+# print(div)
+
+# featured_header = soup.find('div', {'class': 'featured'}).h2.get_text()
+# use get_text as the last element in the scraping process
+# print(featured_header)
+
+# for button in soup.find(attrs={'class': 'button button--primary'}):
+#     print(button)
+# # OR
+
+# for button in soup.find(class_='button button--primary'):
+#     print(button)
+
+for link in soup.find_all('a'):
+    print(link.get('href'))
