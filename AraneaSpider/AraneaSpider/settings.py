@@ -88,3 +88,13 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+
+# this is added to settings to allow processing and not neglect response
+# as displayed below
+HTTPERROR_ALLOWED_CODES = [404, 405, 401]
+
+# 2019-08-01 14:44:31 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response 
+# <401 https://formspree.io/content+scrapy@teamtreehouse.com>: HTTP status code is 
+# not handled or not allowed
